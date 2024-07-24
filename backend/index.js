@@ -9,17 +9,13 @@ app.use(express.text())
 app.use(cors())
 
 
+
 app.use("/", userRouter);
-
-
 app.use("/", blogRouter);
-
-
 
 app.get("/", (req, res)=>{
     res.send("This is home page")
 })
-
 
 
 const PORT = process.env.PORT || 1234;
