@@ -1,0 +1,54 @@
+.custome_css_blog {
+    margin-left: 16rem;
+    background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
+    min-height: 100vh;
+    background-color: black !important;
+    
+}
+
+.button_BLog_main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 40px;
+}
+
+.blog_btn {
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+}
+
+.update {
+    background-color: green;
+}
+
+.delete {
+    background-color: red;
+}
+
+@media (max-width:780px) {
+    .button_BLog_main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        border: 2px solid red;
+        width: 100%;
+        gap: 2px;
+    }
+
+    .update {
+        background-color: green;
+        min-width: 150px;
+    }
+
+    .delete {
+        background-color: red;
+        min-width: 150px;
+    }
+
+}

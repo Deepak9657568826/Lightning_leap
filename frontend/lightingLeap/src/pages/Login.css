@@ -1,0 +1,20 @@
+.backround-img{
+    background-image: url('https://www.shutterstock.com/image-illustration/black-gray-background-abstract-web-260nw-1325410781.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat:no-repeat;
+} 
+
+.custom_padding{
+    margin-left: 14rem;
+}
+
+.logininner{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38As179L7Np2anhOV75SwiCzn86QEjoKmCmRRBPXpRajo4zpnVOgSYgFRp3KZpbnGfUQ&usqp=CAU'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat:no-repeat;
+}
+.loginmain{
+    margin-left: 16rem;
+}
