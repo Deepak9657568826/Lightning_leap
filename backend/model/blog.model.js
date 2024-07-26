@@ -13,6 +13,10 @@ const blogSchema = mongoose.Schema({
         type: String,
         required: true
     }, 
+    date: {
+        type: Date,
+        default: Date.now 
+    },
     creatorID:{
         type: String,
     }, 
