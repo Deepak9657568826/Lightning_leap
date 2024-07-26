@@ -1,10 +1,24 @@
-.custom-card{
-    /* min-width: 40%; */
-    /* border: 2px solid red !important; */
-  }
-  
+* {
+    padding: 0px;
+    margin: 0px;
+}
 
-.custom_home_page_image{
-   width: 100%; 
-   padding: 20px;
+/* .homepage_image_container {
+    max-height: 400px;
+} */
+
+.custom_home_page_image {
+    width: 100%;
+    padding: 20px;
+    max-height: 400px;
+}
+.scalaton_home_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+    /* border: 2px solid red !important; */
+    width: 100vw !important;
+    height: 100vh;
+    background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
 }

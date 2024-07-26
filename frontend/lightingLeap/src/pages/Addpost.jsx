@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css"
 import { useNavigate } from 'react-router-dom';
-
+import "./addpost.css"
 function Addpost() {
     const [title, settitle] = useState("");
     const [image, setimage] = useState("");
@@ -33,6 +33,7 @@ function Addpost() {
                 console.log(data);
                 setLogin(true); 
              alert(`${data.message}`)
+             navigate("/homepage")
 
             })
             .catch((err) =>{
@@ -42,8 +43,8 @@ function Addpost() {
     }
 
     return (
-        <div style={{marginLeft:"15rem"}} className="flex backround-img items-center justify-center min-h-screen bg-gray-100">
-            <div className="flex flex-col items-center bg-blue-300 text-white p-10 rounded-lg shadow-lg w-full max-w-md">
+        <div  className=" addpost_main flex backround-img items-center justify-center min-h-screen bg-gray-100">
+            <div className=" add_post_card flex flex-col items-center  text-white p-10 rounded-lg shadow-lg w-full max-w-md">
                 <div className="mb-4">
                     <h1 className="text-3xl text-black font-bold">Add blog </h1>
                 </div>

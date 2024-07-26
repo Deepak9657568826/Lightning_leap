@@ -7,7 +7,6 @@ import Signup from './pages/Signup'
 import Homepage from './pages/Homepage'
 import Blog from './pages/Blog'
 import Addpost from './pages/Addpost'
-import WholeComponent from './pages/WholeComponent'
 import Userdetail from './pages/Userdetail'
 import Logout from './pages/Logout'
 

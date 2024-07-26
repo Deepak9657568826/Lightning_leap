@@ -9,10 +9,10 @@ function Login() {
     const [password, setPassword] = useState("");
 
     const loginUrl = "http://localhost:1234/login";
+    var state = useSelector(state => state.auth)
 
-    const state = useSelector(state => state.auth)
     const dispatch = useDispatch()
-    console.log(state);
+    // console.log(state);
 
     const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ function Login() {
     }
 
     return (
-        <div className=" loginmain flex backround-img items-center justify-center min-h-screen bg-gray-100">
+        <div className=" loginmain flex backround-img items-center justify-center min-h-screen ">
             <div className=" logininner flex flex-col items-center  text-white p-10 rounded-lg shadow-lg w-full max-w-md">
                 <div className="mb-4">
                     <h1 className="text-3xl text-black font-bold">Login</h1>
@@ -46,20 +46,21 @@ function Login() {
                     </div>
                     <div className="relative">
                         <input
+
                             type="password"
                             value={password}
                             placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
-                            className="pl-10 py-2 w-full rounded-md border border-gray-600 bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                            className="pl-10  py-2 w-full rounded-md border border-gray-600 bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-gray-500"
                         />
                     </div>
                     <div className='flex justify-center'>
                         <button
                             type="submit"
-                            className="w-52 py-2 bg-gray-700 flex justify-center text-white rounded-md hover:bg-gray-600 focus:outline-none"
+                            className="w-52 py-2 font-bold bg-gray-700 flex justify-center text-white rounded-md hover:bg-gray-600 focus:outline-none"
                         >
                             {!state.loading ? (
-                                "Login"
+                                <h2>Login</h2>
                             ) : (
 
                                 <div role="status">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom';
-
+import "./signup.css"
 function Signup() {
     const [name, setname] = useState("");
     const [email, setEmail] = useState("");
@@ -42,8 +42,8 @@ function Signup() {
     }
 
     return (
-        <div style={{marginLeft:"15rem"}} className=" flex backround-img items-center justify-center min-h-screen bg-gray-100">
-            <div className="flex flex-col items-center bg-blue-300 text-white p-10 rounded-lg shadow-lg w-full max-w-md">
+        <div  className="signup_main flex backround-img items-center justify-center min-h-screen bg-gray-100 ">
+            <div className=" signup_card_main flex flex-col items-center bg-blue-300 text-white p-10 rounded-lg shadow-lg w-full max-w-md">
                 <div className="mb-4">
                     <h1 className="text-3xl text-black font-bold">Signup</h1>
                 </div>
@@ -79,10 +79,10 @@ function Signup() {
                     <div className='flex justify-center'>
                         <button
                             type="submit"
-                            className="w-52 py-2 bg-gray-700 flex justify-center text-white rounded-md hover:bg-gray-600 focus:outline-none"
+                            className="w-52 py-2 font-bold bg-gray-700 flex justify-center text-white rounded-md hover:bg-gray-600 focus:outline-none"
                         >
                             {login ? (
-                                "SignUp"
+                                <h1>SignUp</h1>
                             ) : (
                                
                                 <div role="status">
