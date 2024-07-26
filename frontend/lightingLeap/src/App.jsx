@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Blog from './pages/Blog';
 import Addpost from './pages/Addpost';
 import Sidebar from './component/Sidebar';
+import Logout from './pages/Logout';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     <div>
       <Sidebar/>
     <Allroutes/>
+
     </div>
   );
 }

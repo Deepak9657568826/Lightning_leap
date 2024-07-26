@@ -39,8 +39,7 @@ export const fetchLogout = (navigate) => {
                 localStorage.removeItem("token")
             }
             dispatch({ type: LOGOUT_SUCCESS, payload: response.data })
-            alert(`${response.data.Message}`)
-            navigate("/")
+            // alert(`${response.data.Message}`)
         } catch (error) {
             dispatch({ type: LOGOUT_FAILURE, payload: error.message })
         }
