@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Login.css"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
     const [name, setname] = useState("");
@@ -98,6 +98,9 @@ function Signup() {
                         </button>
                     </div>
                 </form>
+                <div className="mt-4 text-gray-800">
+                    <p>If already register ? <Link to="/" className="text-gray-800 font-bold hover:underline">Click here</Link></p>
+                </div>
                 
             </div>
         </div>
