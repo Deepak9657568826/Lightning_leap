@@ -3,7 +3,7 @@
 # Full Stack  Project
 
 ## Project Description
-Bog Application
+Blog Application
 ## Features
 - User Authentication (Sign Up, Login, Logout)
 - CRUD operations for blog posts
