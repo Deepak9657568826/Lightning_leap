@@ -1,0 +1,35 @@
+.name {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid red;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.common {
+    height: 200px;
+    width: 300px;
+    border: 2px solid red;
+    animation: deepak 0.5s linear;
+}
+
+@keyframes deepak {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(0.6) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.2) rotate(360deg);
+        opacity: 1;
+    }
+
+}

@@ -12,20 +12,18 @@ const blogSchema = mongoose.Schema({
     content: {
         type: String,
         required: true
-    }, 
-    date: {
-        type: Date,
-        default: Date.now 
     },
-    creatorID:{
+ 
+    creatorID: {
         type: String,
-    }, 
-    creatorName:{
-            type: String,
-            required: true
+    },
+    creatorName: {
+        type: String,
+        required: true
     }
 },
     {
+        timestamps: true, 
         versionKey: false
     });
 
