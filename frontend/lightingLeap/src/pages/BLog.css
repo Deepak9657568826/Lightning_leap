@@ -45,11 +45,26 @@
 
 .update {
     background-color: green;
+    max-width: 170px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.update:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
 }
 
 .delete {
     background-color: red;
+    max-width: 170px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.delete:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
 
 @media (max-width:780px) {
     .button_BLog_main {
@@ -64,12 +79,12 @@
 
     .update {
         background-color: green;
-        min-width: 150px;
+        max-width: 150px;
     }
 
     .delete {
         background-color: red;
-        min-width: 150px;
+        max-width: 150px;
     }
 
 }

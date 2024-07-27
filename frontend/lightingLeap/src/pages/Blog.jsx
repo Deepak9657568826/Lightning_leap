@@ -162,7 +162,7 @@ const navigate = useNavigate()
                         <img className="creator-image rounded-full w-12 h-12" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="Creator" /> {/* Replace with actual creator image URL */}
                         <div className="ml-3">
                             <p className="text-sm font-medium text-gray-900 dark:text-white">{temp.creatorName}</p>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">{formatDate(temp.date)}</p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">{formatDate(temp.createdAt)}</p>
                         </div>
                     </div>
                     <a href="#">
