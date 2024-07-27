@@ -4,14 +4,16 @@
   import { useDispatch, useSelector } from 'react-redux';
   import { getBlockData } from '../redux/actioncreator';
   import "./Homepage.css"
+  import { useNavigate } from 'react-router-dom';
   
   function Homepage() {
     const state = useSelector(state => state.blog);
     const dispatch = useDispatch();
-    console.log(state.loading);
+    console.log(state);
+  const navigate  = useNavigate();
   
     useEffect(() => {
-      dispatch(getBlockData());
+      dispatch(getBlockData(navigate));
     }, [dispatch]);
   
     function formatDate(dateString) {
@@ -50,8 +52,8 @@
   
     return (
       <div
-        className="flex flex-col justify-center items-center gap-1"
-        style={{ marginLeft: '16rem', background: `radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%)` }}
+        className=" homepage_custom flex flex-col justify-center items-center gap-1"
+        // style={{ marginLeft: '16rem', background: `radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%)` }}
       >
         {state.data.allBlog && state.data.allBlog.map((temp) => (
           <div key={temp._id} id="homepage_card"   className="mt-10 .custom-card max-w-2xl  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

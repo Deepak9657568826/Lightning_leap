@@ -9,6 +9,14 @@
     position: relative;
     margin-left: 16rem;
   }
+  @media (max-width:655px) {
+    .logout-container{
+        margin-left: 0rem;
+    }
+}
+
+
+
   
   .logout-card {
     background: white;

@@ -4,6 +4,12 @@
     
 
 }
+@media (max-width:655px) {
+    .signup_main{
+        margin-left: 0rem;
+    }
+}
+
 
 
 .signup_card_main{

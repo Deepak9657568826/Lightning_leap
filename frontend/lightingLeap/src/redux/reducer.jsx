@@ -60,7 +60,7 @@ export function blogreducer(state = blogInitialState, action) {
             }
         case FETCHDATA_FAILURE:
             return {
-                ...state, data: [], error: action.payload, loading: false
+                ...state, data: [], error: action.payload, loading: true
             }
         case FETCH_INDIVIDUAL_DATA_LOADING:
             return {

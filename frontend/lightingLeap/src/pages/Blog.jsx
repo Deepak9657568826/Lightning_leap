@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIndividualBlockData } from '../redux/actioncreator';
 import "./BLog.css";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 function Blog() {
     const [title, setTitle] = useState("");
@@ -11,13 +12,14 @@ function Blog() {
     const [currentId, setCurrentId] = useState(null);
     const [isUpdating, setIsUpdating] = useState(false);
     const [loader, setLoader] = useState(false)
+const navigate = useNavigate()
 
     const state = useSelector(state => state.blog);
     const dispatch = useDispatch();
     console.log(state);
 
     useEffect(() => {
-        dispatch(getIndividualBlockData());
+        dispatch(getIndividualBlockData(navigate));
     }, [dispatch]);
 
 
@@ -112,7 +114,7 @@ function Blog() {
 
 
     return (
-        <div style={{ marginLeft: '16rem', background: `radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%)` }} className='custom_css_blog flex flex-col justify-center items-center gap-10 '>
+        <div id="blogpostmain"  className='custom_css_blog flex flex-col justify-center items-center gap-10 '>
             {state.data.blog && state.data.blog.map((temp) => (
                 <div key={temp._id} className="max-w-2xl relative custom-card  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5">
                     {isUpdating && currentId === temp._id && (
