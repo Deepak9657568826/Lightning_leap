@@ -30,8 +30,13 @@ function Signup() {
             .then((data) => {
                 console.log(data);
                 setLogin(true); 
-                
-                navigate("/")
+                if(data.Message == `New user with email id ${email} register successfull`){
+                 alert(`${data.Message}`)
+                    navigate("/")
+                }
+                else{
+                    alert(`${data.Message}`)
+                }
                
 
             })

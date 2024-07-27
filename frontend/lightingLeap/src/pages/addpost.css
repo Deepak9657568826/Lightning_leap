@@ -1,16 +1,27 @@
 .addpost_main {
-margin-left: 16rem;
+margin-left: 15rem;
 background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
 
 /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
-@media (max-width:655px) {
+/* @media (max-width:655px) {
     .addpost_main{
         margin-left: 0rem;
     }
+} */
+
+@media (max-width:660px) {
+    .addpost_main {
+        margin-left: 80px;
+    }
 }
 
+@media (max-width:390px) {
+    .addpost_main {
+        margin-left: 50px;
+    }
+}
 
 
 

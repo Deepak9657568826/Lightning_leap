@@ -7,6 +7,7 @@ import Blog from './pages/Blog';
 import Addpost from './pages/Addpost';
 import Sidebar from './component/Sidebar';
 import Logout from './pages/Logout';
+import Sidebar2 from './component/Sidebar2';
 
 function App() {
 
@@ -23,9 +24,9 @@ function App() {
 
   return (
     <div>
-      <Sidebar/>
+      <Sidebar2/>
     <Allroutes/>
-
+     {/* <Sidebar2/> */}
     </div>
   );
 }

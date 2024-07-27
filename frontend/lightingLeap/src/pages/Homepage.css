@@ -12,32 +12,47 @@
     padding: 20px;
     max-height: 400px;
 }
-.scalaton_home_page{
+
+.scalaton_home_page {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10rem;
+    margin-left: 15rem;
     /* border: 2px solid red !important; */
     width: 100vw !important;
     height: 100vh;
     background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
 }
 
-@media (max-width:655px) {
-    .scalaton_home_page{
-        margin-left: 0rem;
+@media (max-width:660px) {
+    .scalaton_home_page {
+        margin-left: 80px;
+    }
+}
+
+
+@media (max-width:390px) {
+    .scalaton_home_page {
+        margin-left: 50px;
     }
 }
 
 
 
-.homepage_custom{
+.homepage_custom {
     background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
-    margin-left: 16rem;
-} 
-@media (max-width:655px) {
-    .homepage_custom{
-        margin-left: 0rem;
+    margin-left: 15rem;
+}
+
+
+@media (max-width:660px) {
+    .homepage_custom {
+        margin-left: 80px;
     }
 }
 
+@media (max-width:390px) {
+    .homepage_custom {
+        margin-left: 50px;
+    }
+}

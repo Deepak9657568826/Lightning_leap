@@ -18,14 +18,21 @@
     animation: slideIn 0.7s ease-out;
 }
 .loginmain{
-    margin-left: 16rem;
+    margin-left: 15rem;
     background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
     /* border: 12px solid red !important; */
 }
 
-@media (max-width:655px) {
+@media (max-width:660px) {
     .loginmain{
-        margin-left: 0rem;
+        margin-left: 80px;
+        /* border: 2px solid red; */
+    }
+}
+@media (max-width:390px) {
+    .loginmain{
+        margin-left: 50px;
+        /* border: 2px solid red; */
     }
 }
 
