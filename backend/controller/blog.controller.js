@@ -3,15 +3,23 @@ const { BlogModel } = require("../model/blog.model");
 
 
 const addblog = async (req, res) => {
-    const payload = req.body;
+    const {title , content} = req.body;
+    const profilePhoto =  req.file.filename ; 
     try {
-        const blog = new BlogModel(payload)
+        const blog = new BlogModel({
+            title, 
+            profilePhoto,
+            content
+        })
         await blog.save();
         res.status(200).json({ "message": "New blog added" })
     } catch (error) {
         res.status(500).json({ "Error": error.message })
     }
 }
+
+
+
 
 
 const getAllBlog = async (req, res) => {
