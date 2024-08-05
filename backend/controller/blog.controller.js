@@ -85,7 +85,7 @@ const deleteblog = async (req, res) => {
 }
 
 module.exports = {
-    addblog,
+    addBlog,
     getAllBlog,
     updateblog,
     deleteblog,
