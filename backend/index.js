@@ -11,6 +11,8 @@ app.use(express.json());
 app.use(express.text());
 app.use(cors());
 
+
+
 // Static files
 app.use('/photo', express.static(path.join(__dirname, 'photo')));
 
