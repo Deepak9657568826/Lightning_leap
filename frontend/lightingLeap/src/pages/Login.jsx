@@ -8,7 +8,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const loginUrl = "http://localhost:1234/login";
+    const loginUrl = "https://lightning-leap-11.onrender.com/login";
     var state = useSelector(state => state.auth)
 
     const dispatch = useDispatch()

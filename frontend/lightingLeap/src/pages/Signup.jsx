@@ -7,7 +7,7 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [login, setLogin] = useState(true)
-    const signupUrl = "https://lightning-leap-10.onrender.com/register";
+    const signupUrl = "https://lightning-leap-11.onrender.com/register";
 
     const navigate = useNavigate();
 

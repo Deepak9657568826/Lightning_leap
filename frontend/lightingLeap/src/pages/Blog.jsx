@@ -23,7 +23,7 @@ const navigate = useNavigate()
     }, [dispatch]);
 
 
-    const blogUrl = "https://lightning-leap-10.onrender.com/blog";
+    const blogUrl = "https://lightning-leap-11.onrender.com/blog";
 
     async function deletePost(id) {
         setLoader(true)
@@ -166,7 +166,7 @@ const navigate = useNavigate()
                         </div>
                     </div>
                     <a href="#">
-                        <img className="custom_add_page_image rounded-t-lg" src={temp.image} alt={temp.title} />
+                        <img className="custom_add_page_image rounded-t-lg" src={`https://lightning-leap-10.onrender.com/photo${temp.profilePhoto}`} alt={temp.title} />
                     </a>
                     <div className="px-5">
                         <a href="#">

@@ -2,7 +2,7 @@ import { FETCH_INDIVIDUAL_DATA_FAILURE, FETCH_INDIVIDUAL_DATA_LOADING, FETCH_IND
 import axios from "axios";
 
 // login
-const loginUrl = "https://lightning-leap-10.onrender.com/login";
+const loginUrl = "https://lightning-leap-11.onrender.com/login";
 
 export const fetchLogin = (data, navigate) => {
     return async (dispatch) => {
@@ -27,7 +27,7 @@ export const fetchLogin = (data, navigate) => {
     }
 }
 
-const logoutUrl = "https://lightning-leap-10.onrender.com/logout";
+const logoutUrl = "https://lightning-leap-11.onrender.com/logout";
 
 export const fetchLogout = (navigate) => {
     return async (dispatch) => {
@@ -55,7 +55,7 @@ export const fetchLogout = (navigate) => {
 
 
 // get blog data
-const blogUrl = "https://lightning-leap-10.onrender.com/blog";
+const blogUrl = "https://lightning-leap-11.onrender.com/blog";
 
 export const getBlockData = (navigate) => {
     return async (dispatch) => {
@@ -91,7 +91,7 @@ export const getBlockData = (navigate) => {
 
 
 // get blog data
-const individualblogUrl = "https://lightning-leap-10.onrender.com/individualblog";
+const individualblogUrl = "https://lightning-leap-11.onrender.com/individualblog";
 
 export const getIndividualBlockData = (navigate) => {
     return async (dispatch) => {

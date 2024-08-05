@@ -65,7 +65,7 @@
               </div>
             </div>
             <div className='homepage_image_container'>
-              <img   className="custom_home_page_image rounded-t-lg" src={temp.image} alt={temp.title} />
+              <img   className="custom_home_page_image rounded-t-lg" src={`https://lightning-leap-11.onrender.com/photo${temp.profilePhoto}`} alt={temp.profilephoto} />
             </div>
             <div className="p-5">
               <a href="#">

@@ -1,91 +1,89 @@
 import React, { useState } from 'react';
-import "./Login.css"
 import { useNavigate } from 'react-router-dom';
-import "./addpost.css"
+import "./Login.css";
+import "./addpost.css";
+
 function Addpost() {
-    const [title, settitle] = useState("");
-    const [image, setimage] = useState("");
-    const [content, setcontent] = useState("");
+    const [title, setTitle] = useState("");
+    const [profilePhoto, setProfilePhoto] = useState(null);
+    const [content, setContent] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const [login, setLogin] = useState(true)
-
-    const addblogUrl = "https://lightning-leap-10.onrender.com/blog";
-
+    const addBlogUrl = "https://lightning-leap-11.onrender.com/blog";
     const navigate = useNavigate();
-    const token = localStorage.getItem("token")
-    function handleLogin(e) {
-        setLogin(false)
-        e.preventDefault();
-        fetch(addblogUrl, {
-            method: "POST",
-            headers: {
-                "Content-type":"Application/json",
-               token
-            },
-            body: JSON.stringify({
-                 title, 
-                 image,
-                 content,
-            })
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                setLogin(true); 
-             alert(`${data.message}`)
-             navigate("/homepage")
+    const token = localStorage.getItem("token");
 
-            })
-            .catch((err) =>{
-                console.log(err);
-                setLogin(true); 
-            })
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const formData = new FormData();
+        formData.append("avatar", profilePhoto);
+        formData.append("title", title);
+        formData.append("content", content);
+
+        try {
+            const response = await fetch(addBlogUrl, {
+                method: "POST",
+                headers: {
+                    token
+                },
+                body: formData
+            });
+            const data = await response.json();
+            if (response.ok) {
+                alert(data.message);
+                navigate("/homepage");
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while adding the blog.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
-        <div  className=" addpost_main flex backround-img items-center justify-center min-h-screen bg-gray-100">
-            <div className=" add_post_card flex flex-col items-center  text-white p-10 rounded-lg shadow-lg w-full max-w-md">
+        <div className="addpost_main flex backround-img items-center justify-center min-h-screen bg-gray-100">
+            <div className="add_post_card flex flex-col items-center text-white p-10 rounded-lg shadow-lg w-full max-w-md">
                 <div className="mb-4">
-                    <h1 className="text-3xl text-black font-bold">Add blog </h1>
+                    <h1 className="text-3xl text-black font-bold">Add Blog</h1>
                 </div>
-                <form onSubmit={handleLogin} className="w-full space-y-4">
-                <div className="relative">
+                <form onSubmit={handleSubmit} className="w-full space-y-4">
+                    <div className="relative">
                         <input
                             type="text"
-                            placeholder=" Enter title"
+                            placeholder="Enter title"
                             value={title}
-                            onChange={(e) => settitle(e.target.value)}
+                            onChange={(e) => setTitle(e.target.value)}
                             className="pl-10 py-2 w-full rounded-md border border-gray-600 bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                            required
                         />
                     </div>
-
+                    <input
+                        type="file"
+                        onChange={(e) => setProfilePhoto(e.target.files[0])}
+                        className="pl-10 py-2 w-full rounded-md border border-gray-600 bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                        required
+                    />
                     <div className="relative">
-                        <input
-                            type="text"
-                            placeholder="Enter image url"
-                            value={image}
-                            onChange={(e) => setimage(e.target.value)}
-                            className="pl-10 py-2 w-full rounded-md border border-gray-600 bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-gray-500"
-                        />
-                    </div>
-                    <div className="relative">
-                        <input
-                            type="text"
+                        <textarea
                             value={content}
                             placeholder="Enter content"
-                            onChange={(e) => setcontent(e.target.value)}
+                            onChange={(e) => setContent(e.target.value)}
                             className="pl-10 py-2 w-full rounded-md border border-gray-600 bg-gray-900 text-gray-300 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                            required
                         />
                     </div>
-                    <div className='flex justify-center'>
+                    <div className="flex justify-center">
                         <button
                             type="submit"
                             className="w-52 py-2 bg-gray-700 flex justify-center text-white rounded-md hover:bg-gray-600 focus:outline-none"
+                            disabled={isSubmitting}
                         >
-                            {login ? (
-                                "Add Blog"
-                            ) : (
-                               
+                            {isSubmitting ? (
                                 <div role="status">
                                     <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
@@ -93,13 +91,12 @@ function Addpost() {
                                     </svg>
                                     <span className="sr-only">Loading...</span>
                                 </div>
-
+                            ) : (
+                                "Add Blog"
                             )}
-                    
                         </button>
                     </div>
                 </form>
-                
             </div>
         </div>
     );
