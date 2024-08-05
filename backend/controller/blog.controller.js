@@ -2,35 +2,32 @@ const { BlogModel } = require("../model/blog.model");
 
 
 
-const addblog = async (req, res) => {
-    const {title , content} = req.body;
-    const profilePhoto =  req.file.filename ; 
+
+const addBlog = async (req, res) => {
+    const { title, content } = req.body;
+    const profilePhoto = req.file.filename;
     try {
         const blog = new BlogModel({
-            title, 
+            title,
             profilePhoto,
             content
-        })
+        });
         await blog.save();
-        res.status(200).json({ "message": "New blog added" })
+        res.status(200).json({ message: "New blog added" });
     } catch (error) {
-        res.status(500).json({ "Error": error.message })
+        res.status(500).json({ Error: error.message });
     }
-}
-
-
-
-
+};
 
 const getAllBlog = async (req, res) => {
     try {
-        const allBlog = await BlogModel.find({})
-        const length = allBlog.length
-        res.status(200).json({ "message": "Details of all blog", size: length, allBlog })
+        const allBlog = await BlogModel.find({});
+        const length = allBlog.length;
+        res.status(200).json({ message: "Details of all blog", size: length, allBlog });
     } catch (error) {
-        res.status(500).json({ "Error": error.message })
+        res.status(500).json({ Error: error.message });
     }
-}
+};
 
 
 const updateblog = async (req, res) => {

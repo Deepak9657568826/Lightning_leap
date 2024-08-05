@@ -11,7 +11,6 @@ const blogRouter = express.Router();
 
 blogRouter.post("/blog", authMiddleware, upload.single("avatar"),  addblog)
 
-
 blogRouter.get("/blog",  authMiddleware, getAllBlog)
 
 blogRouter.get("/individualblog",  authMiddleware, getindividualBlog )
